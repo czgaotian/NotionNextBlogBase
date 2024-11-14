@@ -1,0 +1,7 @@
+{
+  "name": "@notion-next-blog-base/material",
+  "version": "0.0.1",
+  "description": "Material theme for NotionNextBlogBase",
+  "main": "index.js",
+  "license": "MIT"
+}
