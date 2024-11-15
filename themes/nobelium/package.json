@@ -1,0 +1,8 @@
+{
+  "name": "@nnbb/nobelium",
+  "version": "0.0.1",
+  "description": "Nobelium theme for NotionNextBlogBase",
+  "main": "index.tsx",
+  "license": "MIT",
+  "dependencies": {}
+}

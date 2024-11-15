@@ -34,7 +34,7 @@ export const useLayout = (): React.ComponentType<any> => {
     'PageNotFound') as keyof typeof ThemeComponents;
 
   return theme !== BLOG.THEME
-    ? dynamic(() => import(`@/themes/${theme}`).then((m) => m[layoutName]), {
+    ? dynamic(() => import(`@nnbb/${theme}`).then((m) => m[layoutName]), {
         ssr: true,
       })
     : ThemeComponents[layoutName];
