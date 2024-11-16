@@ -190,8 +190,6 @@ importers:
         specifier: ^4.10.1
         version: 4.10.1
 
-  themes/innocent: {}
-
   themes/material:
     dependencies:
       '@emotion/react':
@@ -209,6 +207,8 @@ importers:
       '@mui/material':
         specifier: ^6.1.7
         version: 6.1.7(@emotion/react@11.13.3(@types/react@18.2.75)(react@18.2.0))(@emotion/styled@11.13.0(@emotion/react@11.13.3(@types/react@18.2.75)(react@18.2.0))(@types/react@18.2.75)(react@18.2.0))(@types/react@18.2.75)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+
+  themes/nobelium: {}
 
 packages:
 

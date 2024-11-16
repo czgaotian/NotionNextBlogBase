@@ -13,7 +13,7 @@
     "url": "http://04.lu"
   },
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "post-build": "next-sitemap --config next-sitemap.config.js",
