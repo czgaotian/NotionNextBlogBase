@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
-const { i18n } = require('./next-i18next.config');
 const { THEME } = require('./blog.config');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
+const { i18n } = require('./next-i18next.config');
 
 /**
  * 扫描指定目录下的文件夹名，用于获取当前有几个主题
@@ -83,16 +83,7 @@ const nextConfig = withBundleAnalyzer({
       },
     ];
   },
-  webpack: (config, { dev, isServer }) => {
-    // Replace React with Preact only in client production build
-    // if (!dev && !isServer) {
-    //   Object.assign(config.resolve.alias, {
-    //     react: 'preact/compat',
-    //     'react-dom/test-utils': 'preact/test-utils',
-    //     'react-dom': 'preact/compat'
-    //   })
-    // }
-
+  webpack: (config) => {
     // 动态主题：添加 resolve.alias 配置，将动态路径映射到实际路径
     config.resolve.alias['@theme-components'] = path.resolve(
       __dirname,
@@ -104,10 +95,7 @@ const nextConfig = withBundleAnalyzer({
   experimental: {
     scrollRestoration: true,
   },
-  exportPathMap: async function (
-    defaultPathMap,
-    { dev, dir, outDir, distDir, buildId },
-  ) {
+  exportPathMap: async function (defaultPathMap) {
     // 导出时 忽略/pages/sitemap.xml.js ， 否则报错getServerSideProps
     const pages = { ...defaultPathMap };
     delete pages['/sitemap.xml'];
